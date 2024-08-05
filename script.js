@@ -16,8 +16,8 @@ function playGame() {
     let humanScore = 0
     let computerScore = 0
     function playRound(humanChoice, computerChoice) {
-        humanChoice[0] = humanChoice[0].toUpperCase()
-        computerChoice[0] = computerChoice[0].toUpperCase()
+        humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)
+        computerChoice = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
         if (humanChoice === computerChoice) {
             console.log("It's a tie!")
         }
