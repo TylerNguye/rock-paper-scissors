@@ -45,3 +45,5 @@ function playGame() {
         console.log("You lost the game!")
     }
 }
+
+playGame()
