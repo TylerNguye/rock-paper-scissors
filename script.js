@@ -6,9 +6,10 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let answer = ""
-    while (answer !== "rock" || answer !== "paper" || answer !== "scissors") {
+    while (answer !== "rock" && answer !== "paper" && answer !== "scissors") {
         answer = prompt("Choose rock, paper or scissors.").toLowerCase()
     }
+    return answer
 }
 
 function playGame() {
