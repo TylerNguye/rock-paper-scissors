@@ -1,7 +1,11 @@
+h1 {
+    text-align: center;
+}
 #scores {
     display: flex;
     justify-content: center;
-    padding: 32px;
+    padding: 0 32px;
+    margin-bottom: 50px;
 }
 
 #human-score {
