@@ -15,12 +15,20 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
 #round-result {
     margin-bottom: 50px;
     font-size: 18px;
     font-weight: 800;
     padding: 16px 32px;
+}
+
+.dotted-border {
     border: 2px dotted black;
+}
+
+.solid-border {
+    border: 2px solid black;
 }
 
 #human-score {
@@ -39,4 +47,14 @@ h1 {
     padding: 8px;
     font-size: 16px;
     font-weight: 600
+}
+
+#results {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 32px;
+    background-color: white;
 }

@@ -23,6 +23,10 @@ function getHumanChoice(e) {
 }
 
 function playRound(e) {
+    if (humanScore === 0 && computerScore === 0) {
+        resultsDiv.textContent = ''
+        resultsDiv.style.backgroundColor = 'white'
+    }
     let humanChoice = getHumanChoice(e)
     let computerChoice = getComputerChoice()
     humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)
@@ -45,6 +49,8 @@ function playRound(e) {
         computerScore++
     }
     roundResultDiv.textContent = roundResultText
+    roundResultDiv.classList.toggle("dotted-border")
+    roundResultDiv.classList.toggle("solid-border")
     updateScore()
 }
 
@@ -55,9 +61,9 @@ function gameOver() {
         humanScore = 0
         computerScore = 0
         updateScore()
-        const winner = humanHasWon ? "You have won!" : "The computer has won!"
-        resultsDiv.textContent = winner
-        roundResultDiv.textContent = 'ROUND RESULT'
+        resultsDiv.textContent = humanHasWon ? "You have won!" : "The computer has won!"
+        resultsDiv.style.backgroundColor = humanHasWon ? "green" : "red"
+        roundResultDiv.textContent = 'PLAY AGAIN?'
         roundResultDiv.style.backgroundColor = "white"
     }
 }
