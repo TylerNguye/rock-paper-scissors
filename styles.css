@@ -30,3 +30,13 @@ h1 {
 #computer-score {
     margin-left: auto;
 }
+
+#options {
+    gap: 64px;
+}
+
+#options > button {
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 600
+}
