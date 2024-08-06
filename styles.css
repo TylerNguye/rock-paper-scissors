@@ -1,11 +1,24 @@
 h1 {
     text-align: center;
 }
+
 #scores {
     display: flex;
     justify-content: center;
     padding: 0 32px;
+    margin-bottom: 25px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+#round-result {
     margin-bottom: 50px;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 16px 32px;
+    border: 2px dotted black;
 }
 
 #human-score {

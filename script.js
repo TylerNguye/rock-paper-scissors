@@ -8,6 +8,7 @@ buttons.forEach(button => {
 const resultsDiv = document.querySelector("#results")
 const humanScoreDiv = document.querySelector("#human-score")
 const computerScoreDiv = document.querySelector("#computer-score")
+const roundResultDiv = document.querySelector("#round-result")
 
 let humanScore = 0
 let computerScore = 0
@@ -26,19 +27,24 @@ function playRound(e) {
     let computerChoice = getComputerChoice()
     humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)
     computerChoice = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)
+    let roundResultText
     if (humanChoice === computerChoice) {
-        console.log("It's a tie!")
+        roundResultText = "It's a tie!"
+        roundResultDiv.style.backgroundColor = "yellow"
     }
     else if ((humanChoice === "Rock" && computerChoice === "Scissors")
         || (humanChoice === "Paper" && computerChoice === "Rock")
         || (humanChoice === "Scissors" && computerChoice === "Paper")) {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}.`)
+        roundResultText = `You win! ${humanChoice} beats ${computerChoice}.`
+        roundResultDiv.style.backgroundColor = "green"
         humanScore++
     }
     else {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}.`)
+        roundResultText = `You lose! ${computerChoice} beats ${humanChoice}.`
+        roundResultDiv.style.backgroundColor = "red"
         computerScore++
     }
+    roundResultDiv.textContent = roundResultText
     updateScore()
 }
 
@@ -51,6 +57,8 @@ function gameOver() {
         updateScore()
         const winner = humanHasWon ? "You have won!" : "The computer has won!"
         resultsDiv.textContent = winner
+        roundResultDiv.textContent = 'ROUND RESULT'
+        roundResultDiv.style.backgroundColor = "white"
     }
 }
 
