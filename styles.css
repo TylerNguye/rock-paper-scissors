@@ -1,0 +1,13 @@
+#scores {
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+}
+
+#human-score {
+    margin-right: auto;
+}
+
+#computer-score {
+    margin-left: auto;
+}

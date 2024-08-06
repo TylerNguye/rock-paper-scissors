@@ -6,6 +6,8 @@ buttons.forEach(button => {
     })
 })
 const resultsDiv = document.querySelector("#results")
+const humanScoreDiv = document.querySelector("#human-score")
+const computerScoreDiv = document.querySelector("#computer-score")
 
 let humanScore = 0
 let computerScore = 0
@@ -37,6 +39,7 @@ function playRound(e) {
         console.log(`You lose! ${computerChoice} beats ${humanChoice}.`)
         computerScore++
     }
+    updateScore()
 }
 
 function gameOver() {
@@ -45,7 +48,13 @@ function gameOver() {
     if (humanHasWon || computerHasWon) {
         humanScore = 0
         computerScore = 0
+        updateScore()
         const winner = humanHasWon ? "You have won!" : "The computer has won!"
         resultsDiv.textContent = winner
     }
+}
+
+function updateScore() {
+    humanScoreDiv.textContent = "Score: " + humanScore
+    computerScoreDiv.textContent = "Score: " + computerScore
 }
